@@ -1,6 +1,3 @@
-{% if html is not number %}
-{{ html|safe }}
-{% else %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -13,11 +10,19 @@
     <meta name="description" content="pyramid web application simplepaste">
     <meta name="author" content="Airelle.info">
     <link rel="shortcut icon" href="$/static/airelle-16x16.png">
+
     <!-- Bootstrap core CSS -->
     <link href="//oss.maxcdn.com/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="/static/theme.css" rel="stylesheet">
+
+    <!--
+        Configuration:
+        {{ conf|safe }}
+    -->
+    <link rel='stylesheet' href='/static/style.css' type='text/css'>
+
 
      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -27,6 +32,7 @@
     <base target="_self" />
 </head>
 <body>
+
     <div class="starter-template" style="margin-top:150px;">
       <div class="container">
         <div class="row">
@@ -35,10 +41,10 @@
           </div>
           <div class="col-md-10">
             <div class="content" >
-              <h1 style="text-align:center;">Error</h1>
+              <h1 style="text-align:center;">Pasted code</h1>
             </div>
             <div class="content" style="align-items:center;">
-              <div style="width:200px;margin:auto;">This paste doesn't exist</div>
+              {{ text|safe }}
             </div>
           </div>
         </div>
@@ -58,7 +64,7 @@
       </div>
     </div>
 
-{% endif %}
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

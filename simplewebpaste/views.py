@@ -1,4 +1,5 @@
 from pyramid.view import view_config
+from pyramid.renderers import render
 import deform
 import colander
 from pyramid.response import Response
@@ -458,18 +459,8 @@ def make_paste(data,lang):
     }
     
     result = format_text(configuration, data)
-    output = u'''<!DOCTYPE html><html><head>
-    <!--
-        Configuration:
-        {config}
-        -->
-    <link rel='stylesheet' href='/static/style.css' type='text/css'>
-    </head><body>
-    {text}
-    </body></html>'''.format(
-        config=repr(configuration),
-        text=result)
 
+    output = render('/templates/render.jinja2',{'conf':configuration, 'text':result})
     token = generate_token()
     upload(output.encode('utf-8'), token)
     upload(data.encode('utf-8'), 'raw/%s' % token)

@@ -22,7 +22,7 @@ Installation
 
 Templates
 ---------
-The template used for the login page is ```templates/login.jinja2```, for the paste page it is ```paste.jinja2```, and finally the viewer uses a placeholder ```view.jinja2```. All of them rely on css files located in ```static/css```.
+The template used for the login page is ```templates/login.jinja2```, for the paste page it is ```paste.jinja2```, the pastes are generated using ```render.jinja2``` and finally the viewer uses a placeholder ```view.jinja2``` to either display the paste or an error message. All of them rely on css files located in ```static/css```.
 
 Acknowledgments
 ---------------
