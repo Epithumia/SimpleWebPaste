@@ -16,7 +16,7 @@ Installation
 
   - First, get the contents of this repository : git clone git://github.com/epithumia/SimpleWebPaste
   - Edit the files mentioned above
-  - Run ```pip setup -e .``` (or better yet, make a virtualenv first, then ```$venv/bin/pip setup -e .```
+  - Run ```pip setup -e .``` (or better yet, make a virtualenv first, then ```$venv/bin/pip setup -e .```)
   - Start the server with ```pserve development.ini``` (or ```$venv/bin/pserve development.ini```).
   - The development.ini and production.ini files are usable as-is with nginx, but will run fine without.
 
