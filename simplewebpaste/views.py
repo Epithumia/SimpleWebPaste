@@ -409,7 +409,7 @@ def view(request):
     id = request.matchdict.get('id', -1)
     if os.path.exists('simplewebpaste/pastes/%s' % id):
         with open('simplewebpaste/pastes/%s' % id, 'rb') as f:
-            html = f.read()
+            html = f.read().decode('utf-8')
             f.close()
     else:
         html = ''
