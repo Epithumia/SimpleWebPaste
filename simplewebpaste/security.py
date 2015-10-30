@@ -9,7 +9,6 @@ PASS = {'test':'$6$RQsSr5F9rGSV5RBC$3vgKuUCu2oPkcTNX40QpnGwHZNLstgpLxyRcv88PN95b
 
 class RootFactory(object):
     __acl__ = [ (Allow, Everyone, 'view'),
-                (Allow, 'airelle', 'edit'),
                 (Allow, 'test', 'edit'), ]
     def __init__(self, request):
         pass
